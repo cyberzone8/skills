@@ -4,162 +4,1070 @@
 <style>
 :root{--bg:#f1f3f1;--fg:#1c2428;--mut:#5b6870;--ac:#0b5d4b;--bd:#dfe3e0;--card:#fff;--hi:#d8efe8}
 @media(prefers-color-scheme:dark){:root{--bg:#141a1a;--fg:#e6ecea;--mut:#9aa8a4;--ac:#4cc3a4;--bd:#2c3736;--card:#1c2424;--hi:#1f3a34}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.55 system-ui,Segoe UI,Roboto,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.55 system-ui,Segoe UI,Roboto,sans-serif}
 main{max-width:1150px;margin:0 auto;padding:20px 16px 40px}
-h1{font-size:24px;margin:0 0 4px}h2{font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--ac);border-bottom:2px solid var(--ac);padding-bottom:4px;margin:30px 0 10px}
-.sub{color:var(--mut);margin:0 0 8px}a{color:var(--ac)}.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:14px 16px;margin-top:10px}
-.wrap{overflow-x:auto}table{border-collapse:collapse;font-size:12.5px}
+h1{font-size:24px;margin:0 0 4px}
+h2{font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--ac);border-bottom:2px solid var(--ac);padding-bottom:4px;margin:30px 0 10px}
+.sub{color:var(--mut);margin:0 0 8px}
+a{color:var(--ac)}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:14px 16px;margin-top:10px}
+.wrap{overflow-x:auto}
+table{border-collapse:collapse;font-size:12.5px}
 .m th,.m td{border:1px solid var(--bd);text-align:center;padding:0;width:30px;height:28px}
 .m th.r{text-align:left;padding:0 10px;width:auto;min-width:250px;cursor:pointer;white-space:nowrap;background:var(--card);font-weight:400}
-.m th.c{font-weight:600;color:var(--ac);background:var(--card)}.m th.g{text-align:left;padding:3px 10px;background:var(--hi);color:var(--ac);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase}
-.m td.d{background:#888;opacity:.35}.m td.x{background:var(--ac);color:#fff;font-weight:700;cursor:pointer}.m td.k{color:var(--ac);font-size:16px}
-.m tr.sel th.r,.m tr.sel td:not(.x):not(.d){background:var(--hi)}.m td.col{box-shadow:inset 0 0 0 2px var(--ac)}
-.m tr.dim{opacity:.35}.m tr.core th.r{border-left:4px solid var(--ac);font-weight:700}
+.m th.c{font-weight:600;color:var(--ac);background:var(--card)}
+.m th.g{text-align:left;padding:3px 10px;background:var(--hi);color:var(--ac);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase}
+.m td.d{background:#888;opacity:.35}
+.m td.x{background:var(--ac);color:#fff;font-weight:700;cursor:pointer}
+.m td.k{color:var(--ac);font-size:16px}
+.m tr.sel th.r,.m tr.sel td:not(.x):not(.d){background:var(--hi)}
+.m td.col{box-shadow:inset 0 0 0 2px var(--ac)}
+.m tr.dim{opacity:.35}
+.m tr.core th.r{border-left:4px solid var(--ac);font-weight:700}
 .tag{display:inline-block;font-size:12px;border:1px solid var(--bd);border-radius:6px;padding:1px 8px;margin:2px 4px 2px 0}
-.panel h3{margin:0 0 4px;font-size:17px}.panel ul{margin:4px 0 8px;padding-left:18px}.docev{color:var(--mut);font-size:13px}
+.panel h3{margin:0 0 4px;font-size:17px}
+.panel ul{margin:4px 0 8px;padding-left:18px}
+.docev{color:var(--mut);font-size:13px}
 input{font:inherit;padding:5px 10px;border:1px solid var(--bd);border-radius:8px;background:var(--bg);color:var(--fg);margin-left:6px;min-width:260px}
-.d1 th,.d1 td{border-bottom:1px solid var(--bd);padding:5px 8px;text-align:left;width:auto;height:auto;font-size:13.5px}.d1 th{color:var(--ac);font-size:12px;text-transform:uppercase}.d1 td.n{text-align:center}
+.d1 th,.d1 td{border-bottom:1px solid var(--bd);padding:5px 8px;text-align:left;width:auto;height:auto;font-size:13.5px}
+.d1 th{color:var(--ac);font-size:12px;text-transform:uppercase}
+.d1 td.n{text-align:center}
 .d1 button{font:inherit;font-size:12.5px;border:1px solid var(--ac);background:none;color:var(--ac);border-radius:6px;padding:2px 8px;cursor:pointer}
-.facts{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:13.5px}.facts b{color:var(--ac)}.guide h3{margin:0 0 6px;font-size:17px}.guide ol{margin:6px 0 8px;padding-left:20px}.guide li{margin:5px 0}
-.hello{margin:0 0 6px;font-weight:700;color:var(--ac)}.guide select{font:inherit;padding:4px 8px;border:1px solid var(--bd);border-radius:8px;background:var(--bg);color:var(--fg);max-width:100%}
-.guide details{margin-top:8px;font-size:13.5px}.guide summary{cursor:pointer;color:var(--mut)}.guide input{margin:6px 0;width:100%;min-width:0}
+.facts{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:13.5px}
+.facts b{color:var(--ac)}
+.guide h3{margin:0 0 6px;font-size:17px}
+.guide ol{margin:6px 0 8px;padding-left:20px}
+.guide li{margin:5px 0}
+.hello{margin:0 0 6px;font-weight:700;color:var(--ac)}
+.guide select{font:inherit;padding:4px 8px;border:1px solid var(--bd);border-radius:8px;background:var(--bg);color:var(--fg);max-width:100%}
+.guide details{margin-top:8px;font-size:13.5px}
+.guide summary{cursor:pointer;color:var(--mut)}
+.guide input{margin:6px 0;width:100%;min-width:0}
 .leg{font-size:12px;color:var(--mut);margin:6px 0}
-.embed{background:transparent}.embed main{padding:0 0 10px}.embed h1,.embed .top{display:none}.embed h2:first-of-type{margin-top:16px}
-@media print{body{background:#fff}.m td.x{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+.embed{background:transparent}
+.embed main{padding:0 0 10px}
+.embed h1,.embed .top{display:none}
+.embed h2:first-of-type{margin-top:16px}
+@media print{
+body{background:#fff}
+.m td.x{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
 </style></head><body><main>
+
 <h1>Mapa sistémico de capacidades</h1>
-<p class="sub top">Gustavo Godoy · <a href="cv.html">Volver al CV completo</a></p>
+
+<p class="sub top">
+Gustavo Godoy · <a href="cv.html">Volver al CV completo</a>
+</p>
+
 <div class="card guide" style="margin-top:10px">
+
 <p class="hello" id="hello" hidden></p>
+
 <h3>Cómo usar este mapa (2 minutos)</h3>
-<p>Muestra de forma ordenada <b>qué sé hacer, cómo se conectan esas capacidades entre sí y en qué unidad de un municipio sirven</b>, con la evidencia (certificados, experiencia y estudios) a un clic.</p>
+
+<p>
+Muestra de forma ordenada
+<b>qué sé hacer, cómo se conectan esas capacidades entre sí y en qué unidad de un municipio sirven</b>,
+con la evidencia (certificados, experiencia y estudios) a un clic.
+</p>
+
 <ol>
-<li><b>Elige tu unidad.</b> <select id="usel" onchange="pick(this.value)"><option value="">Seleccionar unidad del organigrama…</option></select> o haz clic en su fila en la sección 2.</li>
-<li><b>Mira qué aporto.</b> Los puntos (●) marcan las capacidades que aplican a esa unidad. Más abajo aparece el detalle con su evidencia.</li>
-<li><b>Revisa cómo se encadenan.</b> En la matriz de la sección 1, las filas con barra verde son las capacidades clave de esa unidad y las ■ indican de qué otras depende: se parte de la investigación y la medición en terreno y se llega al análisis, la planificación y la gestión.</li>
-<li><b>Comprueba la evidencia.</b> Haz clic en cualquier fila de la matriz para ver certificados y cursos; la sección 3 reúne los documentos del doctorado.</li>
+<li>
+<b>Elige tu unidad.</b>
+<select id="usel" onchange="pick(this.value)">
+<option value="">Seleccionar unidad del organigrama…</option>
+</select>
+o haz clic en su fila en la sección 2.
+</li>
+
+<li>
+<b>Mira qué aporto.</b>
+Los puntos (●) marcan las capacidades que aplican a esa unidad.
+Más abajo aparece el detalle con su evidencia.
+</li>
+
+<li>
+<b>Revisa cómo se encadenan.</b>
+En la matriz de la sección 1, las filas con barra verde son las capacidades clave de esa unidad
+y las ■ indican de qué otras depende.
+El sistema parte de la
+<b>física, geofísica y ciencias de la Tierra</b>,
+continúa con la medición y observación territorial y llega al análisis,
+modelamiento, riesgo, sostenibilidad y planificación.
+</li>
+
+<li>
+<b>Comprueba la evidencia.</b>
+Haz clic en cualquier fila de la matriz para ver certificados y cursos;
+la sección 3 reúne los documentos del doctorado.
+</li>
 </ol>
-<p class="docev">Símbolos: ■ = la capacidad de la fila recibe insumos de la columna · ● = capacidad que aporto a la unidad · Barra verde = capacidad clave. Contacto: gustavogodoy.phd@gmail.com</p>
-<details><summary>Personalizar este enlace (para quien lo comparte)</summary>
-<label>Institución <input id="inst" placeholder="Municipalidad de ..." oninput="upd()"></label>
-<p class="docev">Elige también una unidad arriba. Copia este enlace para enviarlo ya personalizado:</p>
-<input id="lnk" readonly onclick="this.select()"></details></div>
+
+<p class="docev">
+Símbolos: ■ = la capacidad de la fila recibe insumos de la columna ·
+● = capacidad que aporto a la unidad · Barra verde = capacidad clave.
+Contacto: gustavogodoy.phd@gmail.com
+</p>
+
+<details>
+<summary>Personalizar este enlace (para quien lo comparte)</summary>
+
+<label>
+Institución
+<input id="inst" placeholder="Municipalidad de ..." oninput="upd()">
+</label>
+
+<p class="docev">
+Elige también una unidad arriba. Copia este enlace para enviarlo ya personalizado:
+</p>
+
+<input id="lnk" readonly onclick="this.select()">
+
+</details>
+</div>
+
 
 <h2>1. Matriz de dependencias (DSM) de capacidades</h2>
-<p class="sub">Cada fila recibe insumos de las columnas marcadas (■). El sistema parte de la <b>investigación</b> (estado del arte, problema, método, redacción) y de la <b>medición en terreno</b>, y avanza hacia el análisis, el riesgo, la planificación y la gestión. Clic en una fila para ver su evidencia.</p>
-<div class="card wrap"><table class="m" id="dsm"></table></div>
+
+<p class="sub">
+Cada fila recibe insumos de las columnas marcadas (■).
+La arquitectura parte de la
+<b>física, geofísica y ciencias de la Tierra</b>,
+continúa por la geodesia y la observación territorial,
+y avanza hacia SIG, datos, modelamiento, riesgo,
+sostenibilidad, planificación y gestión.
+Clic en una fila para ver su evidencia.
+</p>
+
+<div class="card wrap">
+<table class="m" id="dsm"></table>
+</div>
+
 <div class="card panel" id="ev"></div>
 
+
 <h2>2. Mis capacidades por unidad del organigrama municipal</h2>
-<p class="sub">Cada fila es una unidad típica de un municipio chileno; los puntos (●) indican las capacidades que aporto. Clic en una unidad: se atenúa el resto de la matriz 1 y se muestra la evidencia.</p>
+
+<p class="sub">
+Cada fila es una unidad típica de un municipio chileno;
+los puntos (●) indican las capacidades que aporto.
+Clic en una unidad: se atenúa el resto de la matriz 1 y se muestra la evidencia.
+</p>
+
 <div class="leg" id="leg"></div>
-<div class="card wrap"><table class="m" id="org"></table></div>
+
+<div class="card wrap">
+<table class="m" id="org"></table>
+</div>
+
 <div class="card panel" id="unit"></div>
 
+
 <h2>3. Evidencia documental del Doctorado en Sostenibilidad</h2>
-<div class="card"><div class="facts">
-<span><b>Constancia:</b> folio CE-2026-249, UNICEPES (Zitácuaro, México)</span><span><b>RVOE:</b> DOC160402</span>
-<span><b>Emitida:</b> 23-09-2026</span><span><b>Créditos:</b> 90 de 90</span><span><b>Promedio parcial:</b> 9.3</span></div>
-<p class="sub" style="margin-top:8px">A) Asignaturas de la constancia, vinculadas a capacidades (criterio propio). Los Seminarios I–IV y de Doctorado corresponden por nombre y orden a las etapas del cronograma (a confirmar).</p>
-<div class="wrap"><table class="d1" id="doc"></table></div></div>
-<div class="card"><p class="sub">B) Cronograma del periodo de investigación, Fondo Verde Institute, Grupo 2021-2 (17-05-2021 a 16-04-2023): las etapas dan origen a las capacidades de investigación 1 a 4.</p>
-<div class="wrap"><table class="d1" id="cro"></table></div>
-<p class="docev">El cronograma describe el programa de investigación; no certifica por sí solo la obtención del grado. La constancia acredita créditos completados.</p></div>
+
+<div class="card">
+
+<div class="facts">
+<span><b>Constancia:</b> folio CE-2026-249, UNICEPES (Zitácuaro, México)</span>
+<span><b>RVOE:</b> DOC160402</span>
+<span><b>Emitida:</b> 23-09-2026</span>
+<span><b>Créditos:</b> 90 de 90</span>
+<span><b>Promedio parcial:</b> 9.3</span>
+</div>
+
+<p class="sub" style="margin-top:8px">
+A) Asignaturas de la constancia, vinculadas a capacidades (criterio propio).
+Los Seminarios I–IV y de Doctorado corresponden por nombre y orden a las etapas del cronograma (a confirmar).
+</p>
+
+<div class="wrap">
+<table class="d1" id="doc"></table>
+</div>
+
+</div>
+
+
+<div class="card">
+
+<p class="sub">
+B) Cronograma del periodo de investigación, Fondo Verde Institute,
+Grupo 2021-2 (17-05-2021 a 16-04-2023):
+las etapas dan origen a las capacidades de investigación 1 a 4.
+</p>
+
+<div class="wrap">
+<table class="d1" id="cro"></table>
+</div>
+
+<p class="docev">
+El cronograma describe el programa de investigación; no certifica por sí solo la obtención del grado.
+La constancia acredita créditos completados.
+</p>
+
+</div>
+
 </main>
+
+
 <script>
+
+/* ============================================================
+   MATRIZ DE CAPACIDADES
+   ============================================================ */
+
 const E=[
-{k:'EDA',n:'Revisión sistemática y estado del arte',in:[],ev:['Cronograma: Informe del Estado del Arte (24-05 a 01-08-2021)','Revisor de artículos, Información Tecnológica (SciELO, 2018)']},
-{k:'PRB',n:'Formulación del problema y marco teórico',in:['EDA'],ev:['Cronograma: problema, pregunta, objetivos, justificación, viabilidad y marco teórico (ago. 2021)','Coinvestigador, OCRE UCO 1895 (2019-2020) y VRID fotointerpretación (2016-2018)']},
-{k:'MET',n:'Diseño metodológico y recolección de datos',in:['PRB'],ev:['Cronograma: metodología de investigación y cronograma de actividades (oct. 2021)','Análisis de Datos de Encuestas (2014); Investigación Cualitativa (2014); Experimentación para la Mejora, McMaster (2015)']},
-{k:'RED',n:'Redacción técnica, propuesta y defensa',in:['EDA','PRB','MET'],ev:['Cronograma: propuesta doctoral, defensa oral, informes de avance y artículo de revisión (2021-2023)','Artículo AERMOD, Obras y Proyectos (2016); artículo en Pensamiento, palabra y obra (2019); 8 ponencias (2014-2020)']},
-{k:'GEO',n:'Geodesia, GNSS y topografía',in:[],ev:['Ing. de Ejecución en Geomensura, U. de Concepción (2008)','GNSS de precisión (2013); GNSS diferencial en redes activas (2014); GPS en Topografía (2008-09)','Medición de colectores de aguas lluvias, Talcahuano, tras el 27F (2010)']},
-{k:'IOT',n:'IoT y sensores',in:[],ev:['Diplomado Técnico en IoT, Fundación Carlos Slim (2020)','MIT: Más allá del IoT, Inteligencia Sensorial (2021)','Ponencia «IoT: nuevo contexto para la Geomática» (2020)']},
-{k:'SIG',n:'Cartografía, SIG e IDE',in:['GEO','CAL'],ev:['Gestión de proyectos SIG, U. de Girona (2009); UNIGIS Web Map (2011)','SIG en el Catastro, OEA (2010); Valuación Territorial y Catastro (2009)','Docente de SIG y Cartografía 2008-2024; Seminario IDE Chile (2017)']},
-{k:'CAL',n:'Calidad y normalización geográfica',in:['GEO','SIG'],ev:['Magíster en Evaluación y Gestión de la Información Geográfica, U. de Jaén (2016)','Experto Universitario en Calidad de la Información Geográfica (2013)','Comité Espejo ISO/TC211, INN (2016-2018); Gestión de la Incertidumbre (2012)']},
-{k:'TD',n:'Teledetección y drones (UAV)',in:['GEO','SIG'],ev:['Teledetección y SIG aplicados a Viticultura (2012)','Fotointerpretación topográfica del Biobío con imágenes aéreas y de dron (2016-2018)','Proyectos de título dirigidos: Sentinel-2, glaciares, sequía, islas de calor']},
-{k:'DAT',n:'Análisis de datos y estadística',in:['SIG','TD','IOT','MET'],ev:['IDB10x Datología (2015); Geoestadística aplicada (2010)','Python, R, SQL, MATLAB, Power BI','Índice de causalidad y riesgo de incendio forestal con SIG (2015)']},
-{k:'SIM',n:'Modelamiento y simulación',in:['DAT','SIG','TD'],ev:['Experto en Creación de Modelos de Simulación Ambiental (2013)','Artículo: dispersión de material particulado por estufas a leña con AERMOD (2016)']},
-{k:'RIE',n:'Riesgo de desastres y cambio climático',in:['SIM','SIG','TD','DAT','IOT'],ev:['Evaluaciones posdesastre, Municipalidad de Talcahuano (2010)','Proyectos de título: riesgo de incendios, sequía, glaciares']},
-{k:'PLA',n:'Planificación territorial y sostenibilidad',in:['RIE','SIM','SIG','DAT','PRB'],ev:['MIT: Sistemas de Infraestructura Sostenible (2022); Economía Circular (2022)','Línea de investigación: metabolismo urbano y sostenibilidad en ciudades']},
-{k:'PRY',n:'Gestión de proyectos y financiamiento',in:['PLA','RIE','RED'],ev:['Jefe de Carrera, Ing. Geomática (2014-2018)','Coordinador de Relaciones Internacionales, Erasmus+ INCHIPE (2016-)','Financiación y Cooperación (2016); Gestión de Proyectos Internacionales (2016); IDB1x (2014)','Convenios con municipios, instituciones y empresas']},
-{k:'LIC',n:'Licitaciones y mercado público',in:['PRY'],ev:['ChileCompra: Licitación Pública (2021) y Cómo ser Proveedor del Estado (2021)','Aporte a licitaciones geomáticas del mercado público']},
-{k:'EDU',n:'Docencia, capacitación y diseño formativo',in:[],ev:['15+ años de docencia universitaria; rediseño curricular de Ing. Geomática (2011)','Diplomados en Docencia Superior y Competencias Genéricas (2015)','Aprendizaje combinado e híbrido, Canvas, Teams, Nearpod (2020-2022)']},
-{k:'COM',n:'Comunicación y trabajo con la comunidad',in:['PLA','RIE','EDU','RED'],ev:['«1000 científicos, 1000 aulas» (2016-2017)','Observatorio Científico Escolar OCRE (2019-2020)','«Conociendo Angola» (2015); Formador en Emprendimiento e Innovación Territorial']}
+
+/* ---------- INVESTIGACIÓN ---------- */
+
+{
+k:'EDA',
+n:'Revisión sistemática y estado del arte',
+in:[],
+ev:[
+'Cronograma: Informe del Estado del Arte (24-05 a 01-08-2021)',
+'Revisor de artículos, Información Tecnológica (SciELO, 2018)'
+]
+},
+
+{
+k:'PRB',
+n:'Formulación del problema y marco teórico',
+in:['EDA'],
+ev:[
+'Cronograma: problema, pregunta, objetivos, justificación, viabilidad y marco teórico (ago. 2021)',
+'Coinvestigador, OCRE UCO 1895 (2019-2020) y VRID fotointerpretación (2016-2018)'
+]
+},
+
+{
+k:'MET',
+n:'Diseño metodológico y recolección de datos',
+in:['PRB'],
+ev:[
+'Cronograma: metodología de investigación y cronograma de actividades (oct. 2021)',
+'Análisis de Datos de Encuestas (2014); Investigación Cualitativa (2014); Experimentación para la Mejora, McMaster (2015)'
+]
+},
+
+{
+k:'RED',
+n:'Redacción técnica, propuesta y defensa',
+in:['EDA','PRB','MET'],
+ev:[
+'Cronograma: propuesta doctoral, defensa oral, informes de avance y artículo de revisión (2021-2023)',
+'Artículo AERMOD, Obras y Proyectos (2016); artículo en Pensamiento, palabra y obra (2019); 8 ponencias (2014-2020)'
+]
+},
+
+/* ---------- CIENCIAS FÍSICAS Y DE LA TIERRA ---------- */
+
+{
+k:'FGE',
+n:'Física, Geofísica y Ciencias de la Tierra',
+in:[],
+ev:[
+'Antecedentes formativos en física, geofísica y ciencias de la Tierra',
+'Fundamentos aplicados a geodesia, medición, observación de la Tierra y análisis de fenómenos físicos'
+]
+},
+
+/* ---------- GEOMÁTICA ---------- */
+
+{
+k:'GEO',
+n:'Geodesia, GNSS y topografía',
+in:['FGE'],
+ev:[
+'Ing. de Ejecución en Geomensura, U. de Concepción (2008)',
+'GNSS de precisión (2013); GNSS diferencial en redes activas (2014); GPS en Topografía (2008-09)',
+'Medición de colectores de aguas lluvias, Talcahuano, tras el 27F (2010)'
+]
+},
+
+{
+k:'IOT',
+n:'IoT y sensores',
+in:[],
+ev:[
+'Diplomado Técnico en IoT, Fundación Carlos Slim (2020)',
+'MIT: Más allá del IoT, Inteligencia Sensorial (2021)',
+'Ponencia «IoT: nuevo contexto para la Geomática» (2020)'
+]
+},
+
+{
+k:'SIG',
+n:'Cartografía, SIG e IDE',
+in:['GEO','CAL'],
+ev:[
+'Gestión de proyectos SIG, U. de Girona (2009); UNIGIS Web Map (2011)',
+'SIG en el Catastro, OEA (2010); Valuación Territorial y Catastro (2009)',
+'Docente de SIG y Cartografía 2008-2024; Seminario IDE Chile (2017)'
+]
+},
+
+{
+k:'CAL',
+n:'Calidad y normalización geográfica',
+in:['GEO','SIG'],
+ev:[
+'Magíster en Evaluación y Gestión de la Información Geográfica, U. de Jaén (2016)',
+'Experto Universitario en Calidad de la Información Geográfica (2013)',
+'Comité Espejo ISO/TC211, INN (2016-2018); Gestión de la Incertidumbre (2012)'
+]
+},
+
+{
+k:'TD',
+n:'Teledetección y drones (UAV)',
+in:['FGE','GEO','SIG'],
+ev:[
+'Teledetección y SIG aplicados a Viticultura (2012)',
+'Fotointerpretación topográfica del Biobío con imágenes aéreas y de dron (2016-2018)',
+'Proyectos de título dirigidos: Sentinel-2, glaciares, sequía, islas de calor'
+]
+},
+
+/* ---------- DATOS Y MODELAMIENTO ---------- */
+
+{
+k:'DAT',
+n:'Análisis de datos y estadística',
+in:['SIG','TD','IOT','MET'],
+ev:[
+'IDB10x Datología (2015); Geoestadística aplicada (2010)',
+'Python, R, SQL, MATLAB, Power BI',
+'Índice de causalidad y riesgo de incendio forestal con SIG (2015)'
+]
+},
+
+{
+k:'SIM',
+n:'Modelamiento y simulación',
+in:['FGE','DAT','SIG','TD'],
+ev:[
+'Experto en Creación de Modelos de Simulación Ambiental (2013)',
+'Artículo: dispersión de material particulado por estufas a leña con AERMOD (2016)'
+]
+},
+
+{
+k:'RIE',
+n:'Riesgo de desastres y cambio climático',
+in:['SIM','SIG','TD','DAT','IOT'],
+ev:[
+'Evaluaciones posdesastre, Municipalidad de Talcahuano (2010)',
+'Proyectos de título: riesgo de incendios, sequía, glaciares'
+]
+},
+
+{
+k:'PLA',
+n:'Planificación territorial y sostenibilidad',
+in:['RIE','SIM','SIG','DAT','PRB'],
+ev:[
+'MIT: Sistemas de Infraestructura Sostenible (2022); Economía Circular (2022)',
+'Línea de investigación: metabolismo urbano y sostenibilidad en ciudades'
+]
+},
+
+{
+k:'PRY',
+n:'Gestión de proyectos y financiamiento',
+in:['PLA','RIE','RED'],
+ev:[
+'Jefe de Carrera, Ing. Geomática (2014-2018)',
+'Coordinador de Relaciones Internacionales, Erasmus+ INCHIPE (2016-)',
+'Financiación y Cooperación (2016); Gestión de Proyectos Internacionales (2016); IDB1x (2014)',
+'Convenios con municipios, instituciones y empresas'
+]
+},
+
+{
+k:'LIC',
+n:'Licitaciones y mercado público',
+in:['PRY'],
+ev:[
+'ChileCompra: Licitación Pública (2021) y Cómo ser Proveedor del Estado (2021)',
+'Aporte a licitaciones geomáticas del mercado público'
+]
+},
+
+/* ---------- EDUCACIÓN Y COMUNIDAD ---------- */
+
+{
+k:'EDU',
+n:'Docencia, capacitación y diseño formativo',
+in:[],
+ev:[
+'15+ años de docencia universitaria; rediseño curricular de Ing. Geomática (2011)',
+'Diplomados en Docencia Superior y Competencias Genéricas (2015)',
+'Aprendizaje combinado e híbrido, Canvas, Teams, Nearpod (2020-2022)'
+]
+},
+
+{
+k:'COM',
+n:'Comunicación y trabajo con la comunidad',
+in:['PLA','RIE','EDU','RED'],
+ev:[
+'«1000 científicos, 1000 aulas» (2016-2017)',
+'Observatorio Científico Escolar OCRE (2019-2020)',
+'«Conociendo Angola» (2015); Formador en Emprendimiento e Innovación Territorial'
+]
+}
+
 ];
-const idx={};E.forEach((e,i)=>idx[e.k]=i);
-const D=[['Introducción a los Problemas Ambientales',9,4,'PLA'],['Introducción a la sostenibilidad, economía y política ambiental',9,4,'PLA'],['Modelos en ecología y gestión de recursos naturales',10,4,'SIM'],['Ciencias ambientales para la toma de decisiones',9,4,'DAT'],['Planificación y evaluación ambiental',9,4,'PLA'],['Gestión Ambiental',9,4,'PLA'],['Turismo Sostenible',9,4,'PLA'],['Asentamientos Humanos Sostenibles',10,4,'PLA'],['Gestión y Administración de Proyectos Ambientales',10,4,'PRY'],['Cambio Climático Global',9,4,'RIE'],['Gestión de Riesgos de Desastres',10,4,'RIE'],['Rehabilitación Ambiental Terrestre',10,4,'RIE'],['Seminario de Investigación I (estado del arte)',10,8,'EDA'],['Seminario de Investigación II (problema)',9,8,'PRB'],['Seminario de Investigación III (diseño metodológico)',8,10,'MET'],['Seminario de Investigación IV (propuesta y defensa)',9,8,'RED'],['Seminario de Doctorado (proyecto de tesis)',9,8,'RED']];
-const CR=[['Antes de empezar: cuestionario de investigación','17-23/05/2021','Cuestionario','PRB'],['Seminario I: análisis del estado del arte','24/05-01/08/2021','Informe del estado del arte','EDA'],['Seminario II: el problema de investigación','02-29/08/2021','Problema, pregunta, objetivos, viabilidad y marco teórico','PRB'],['Seminario III: diseño metodológico','30/08-17/10/2021','Metodología y cronograma de actividades','MET'],['Seminario IV: propuesta de investigación','18/10/2021-23/01/2022','Propuesta doctoral y defensa oral','RED'],['Seminario V: proyecto de tesis doctoral','27/02/2022-16/04/2023','Informes de avance 1-3, artículo de revisión, documento final','RED']];
-const G=[['Alcaldía, control y normativa',[
-['Gabinete de Alcaldía y asesoría estratégica','PLA PRY RIE COM RED','Diagnósticos y proyectos con datos territoriales para decidir.'],
-['Secretaría Municipal y Concejo','RED CAL COM','Informes técnicos claros y documentación con estándares de calidad.'],
-['Dirección de Control','CAL DAT MET RED','Verificación metodológica de datos e informes.'],
-['Asesoría Jurídica (apoyo técnico)','LIC RED CAL','Bases técnicas y normas de información geográfica; sin función jurídica.']]],
-['Administración y finanzas',[
-['Administración y Finanzas','DAT PRY LIC','Análisis de datos y formulación de proyectos con mirada de gestión.'],
-['Adquisiciones y Mercado Público','LIC PRY RED','Bases técnicas, licitaciones y formación ChileCompra.'],
-['Rentas, patentes y avalúos','SIG CAL GEO DAT','Información predial y catastral confiable.'],
-['Gestión de personas y capacitación','EDU COM MET','Diseño formativo y capacitación por competencias.'],
-['Informática y gobierno digital','SIG IOT DAT CAL','Datos geoespaciales, sensores y tableros.']]],
-['Planificación',[
-['SECPLA','PLA SIG DAT PRY PRB RED','Planes comunales, diagnóstico, escenarios y cartera de proyectos.'],
-['Oficina de proyectos y fondos','PRY LIC RED PLA','Formulación, postulación y seguimiento de fondos.'],
-['Estudios y observatorio comunal','EDA PRB MET DAT RED','Investigación aplicada: del problema al informe.']]],
-['Obras y territorio',[
-['Dirección de Obras (DOM)','GEO SIG CAL TD','Levantamientos, fiscalización y cartografía de obras.'],
-['Catastro, SIG e IDE local','GEO SIG CAL TD DAT','Base territorial única, con metadatos y drones.'],
-['Tránsito y transporte','SIG DAT IOT','Análisis espacial y sensores de flujo.'],
-['Infraestructura y proyectos de obras','GEO PRY PLA','Topografía y formulación de proyectos de inversión.']]],
-['Medio ambiente y emergencias',[
-['Medio ambiente, aseo y ornato (DIMAO)','PLA SIM RIE DAT IOT','Calidad del aire, adaptación climática y monitoreo.'],
-['Protección civil y emergencias','RIE TD SIG IOT SIM COM','Amenazas, alerta temprana y evaluación posdesastre.'],
-['Seguridad pública','SIG DAT TD IOT','Análisis espacial de incidentes y cobertura.']]],
-['Desarrollo comunitario y vivienda',[
-['DIDECO','COM EDU MET DAT PLA','Diagnósticos sociales con método y trabajo comunitario.'],
-['Vivienda y asentamientos','PLA SIG RIE PRY','Asentamientos sostenibles, riesgo y proyectos.'],
-['Oficinas sociales (OMIL, adulto mayor, juventud, género, pueblos originarios)','COM MET DAT EDU','Encuestas, diagnósticos y talleres.']]],
-['Desarrollo económico y turismo',[
-['Fomento productivo y desarrollo económico local','PLA PRY COM LIC EDU','Emprendimiento territorial, economía circular y fondos.'],
-['Turismo','PLA SIG PRY COM','Turismo sostenible y planificación de destinos.'],
-['Desarrollo rural','TD SIG PLA PRY','Teledetección de suelos y vegetación, y proyectos.']]],
-['Educación, salud y cultura',[
-['Educación municipal (DAEM o corporación)','EDU COM DAT MET','Docencia, diseño instruccional y ciencia escolar.'],
-['Salud municipal (APS)','DAT SIG MET COM','Análisis espacial y encuestas; sin función clínica.'],
-['Cultura, deportes y comunicaciones','COM EDU RED','Divulgación científica y comunicación pública.']]]];
-const U=[];G.forEach((g,gi)=>g[1].forEach(u=>U.push({g:gi,n:u[0],core:u[1].split(' '),p:u[2]})));
-const $=id=>document.getElementById(id);let cu=-1;
+
+
+/* ============================================================
+   ÍNDICES
+   ============================================================ */
+
+const idx={};
+E.forEach((e,i)=>idx[e.k]=i);
+
+
+/* ============================================================
+   DOCTORADO
+   ============================================================ */
+
+const D=[
+['Introducción a los Problemas Ambientales',9,4,'PLA'],
+['Introducción a la sostenibilidad, economía y política ambiental',9,4,'PLA'],
+['Modelos en ecología y gestión de recursos naturales',10,4,'SIM'],
+['Ciencias ambientales para la toma de decisiones',9,4,'DAT'],
+['Planificación y evaluación ambiental',9,4,'PLA'],
+['Gestión Ambiental',9,4,'PLA'],
+['Turismo Sostenible',9,4,'PLA'],
+['Asentamientos Humanos Sostenibles',10,4,'PLA'],
+['Gestión y Administración de Proyectos Ambientales',10,4,'PRY'],
+['Cambio Climático Global',9,4,'RIE'],
+['Gestión de Riesgos de Desastres',10,4,'RIE'],
+['Rehabilitación Ambiental Terrestre',10,4,'RIE'],
+['Seminario de Investigación I (estado del arte)',10,8,'EDA'],
+['Seminario de Investigación II (problema)',9,8,'PRB'],
+['Seminario de Investigación III (diseño metodológico)',8,10,'MET'],
+['Seminario de Investigación IV (propuesta y defensa)',9,8,'RED'],
+['Seminario de Doctorado (proyecto de tesis)',9,8,'RED']
+];
+
+
+const CR=[
+['Antes de empezar: cuestionario de investigación','17-23/05/2021','Cuestionario','PRB'],
+['Seminario I: análisis del estado del arte','24/05-01/08/2021','Informe del estado del arte','EDA'],
+['Seminario II: el problema de investigación','02-29/08/2021','Problema, pregunta, objetivos, viabilidad y marco teórico','PRB'],
+['Seminario III: diseño metodológico','30/08-17/10/2021','Metodología y cronograma de actividades','MET'],
+['Seminario IV: propuesta de investigación','18/10/2021-23/01/2022','Propuesta doctoral y defensa oral','RED'],
+['Seminario V: proyecto de tesis doctoral','27/02/2022-16/04/2023','Informes de avance 1-3, artículo de revisión, documento final','RED']
+];
+
+
+/* ============================================================
+   ORGANIGRAMA MUNICIPAL
+   ============================================================ */
+
+const G=[
+
+[
+'Alcaldía, control y normativa',
+[
+['Gabinete de Alcaldía y asesoría estratégica',
+ 'PLA PRY RIE COM RED',
+ 'Diagnósticos y proyectos con datos territoriales para decidir.'],
+
+['Secretaría Municipal y Concejo',
+ 'RED CAL COM',
+ 'Informes técnicos claros y documentación con estándares de calidad.'],
+
+['Dirección de Control',
+ 'CAL DAT MET RED',
+ 'Verificación metodológica de datos e informes.'],
+
+['Asesoría Jurídica (apoyo técnico)',
+ 'LIC RED CAL',
+ 'Bases técnicas y normas de información geográfica; sin función jurídica.']
+]
+],
+
+[
+'Administración y finanzas',
+[
+['Administración y Finanzas',
+ 'DAT PRY LIC',
+ 'Análisis de datos y formulación de proyectos con mirada de gestión.'],
+
+['Adquisiciones y Mercado Público',
+ 'LIC PRY RED',
+ 'Bases técnicas, licitaciones y formación ChileCompra.'],
+
+['Rentas, patentes y avalúos',
+ 'FGE SIG CAL GEO DAT',
+ 'Información predial, catastral y territorial con base física y geográfica confiable.'],
+
+['Gestión de personas y capacitación',
+ 'EDU COM MET',
+ 'Diseño formativo y capacitación por competencias.'],
+
+['Informática y gobierno digital',
+ 'SIG IOT DAT CAL',
+ 'Datos geoespaciales, sensores y tableros.']
+]
+],
+
+[
+'Planificación',
+[
+['SECPLA',
+ 'PLA SIG DAT PRY PRB RED',
+ 'Planes comunales, diagnóstico, escenarios y cartera de proyectos.'],
+
+['Oficina de proyectos y fondos',
+ 'PRY LIC RED PLA',
+ 'Formulación, postulación y seguimiento de fondos.'],
+
+['Estudios y observatorio comunal',
+ 'EDA PRB MET DAT RED',
+ 'Investigación aplicada: del problema al informe.']
+]
+],
+
+[
+'Obras y territorio',
+[
+['Dirección de Obras (DOM)',
+ 'FGE GEO SIG CAL TD',
+ 'Fundamentos físicos y geofísicos, levantamientos, fiscalización y cartografía de obras.'],
+
+['Catastro, SIG e IDE local',
+ 'FGE GEO SIG CAL TD DAT',
+ 'Base territorial única, con fundamentos de Tierra, metadatos, geodesia y drones.'],
+
+['Tránsito y transporte',
+ 'SIG DAT IOT',
+ 'Análisis espacial y sensores de flujo.'],
+
+['Infraestructura y proyectos de obras',
+ 'FGE GEO PRY PLA',
+ 'Fundamentos físicos, topografía y formulación de proyectos de inversión.']
+]
+],
+
+[
+'Medio ambiente y emergencias',
+[
+['Medio ambiente, aseo y ornato (DIMAO)',
+ 'FGE PLA SIM RIE DAT IOT',
+ 'Fundamentos de ciencias de la Tierra, calidad ambiental, adaptación climática y monitoreo.'],
+
+['Protección civil y emergencias',
+ 'FGE RIE TD SIG IOT SIM COM',
+ 'Amenazas físicas, alerta temprana, observación territorial y evaluación posdesastre.'],
+
+['Seguridad pública',
+ 'SIG DAT TD IOT',
+ 'Análisis espacial de incidentes y cobertura.']
+]
+],
+
+[
+'Desarrollo comunitario y vivienda',
+[
+['DIDECO',
+ 'COM EDU MET DAT PLA',
+ 'Diagnósticos sociales con método y trabajo comunitario.'],
+
+['Vivienda y asentamientos',
+ 'PLA SIG RIE PRY',
+ 'Asentamientos sostenibles, riesgo y proyectos.'],
+
+['Oficinas sociales (OMIL, adulto mayor, juventud, género, pueblos originarios)',
+ 'COM MET DAT EDU',
+ 'Encuestas, diagnósticos y talleres.']
+]
+],
+
+[
+'Desarrollo económico y turismo',
+[
+['Fomento productivo y desarrollo económico local',
+ 'PLA PRY COM LIC EDU',
+ 'Emprendimiento territorial, economía circular y fondos.'],
+
+['Turismo',
+ 'PLA SIG PRY COM',
+ 'Turismo sostenible y planificación de destinos.'],
+
+['Desarrollo rural',
+ 'FGE TD SIG PLA PRY',
+ 'Ciencias de la Tierra, teledetección de suelos y vegetación, y proyectos.']
+]
+],
+
+[
+'Educación, salud y cultura',
+[
+['Educación municipal (DAEM o corporación)',
+ 'EDU COM DAT MET',
+ 'Docencia, diseño instruccional y ciencia escolar.'],
+
+['Salud municipal (APS)',
+ 'DAT SIG MET COM',
+ 'Análisis espacial y encuestas; sin función clínica.'],
+
+['Cultura, deportes y comunicaciones',
+ 'COM EDU RED',
+ 'Divulgación científica y comunicación pública.']
+]
+]
+
+];
+
+
+/* ============================================================
+   CONSTRUCCIÓN DE UNIDADES
+   ============================================================ */
+
+const U=[];
+
+G.forEach((g,gi)=>
+g[1].forEach(u=>
+U.push({
+g:gi,
+n:u[0],
+core:u[1].split(' '),
+p:u[2]
+})
+)
+);
+
+
+/* ============================================================
+   UTILIDADES
+   ============================================================ */
+
+const $=id=>document.getElementById(id);
+
+let cu=-1;
+
 const q=s=>s.replace(/</g,'');
-// DSM
+
+
+/* ============================================================
+   DSM
+   ============================================================ */
+
 const t=$('dsm');
-t.innerHTML='<tr><th></th>'+E.map((e,i)=>`<th class="c" title="${e.n}">${i+1}</th>`).join('')+'</tr>'+E.map((e,i)=>`<tr data-i="${i}"><th class="r">${i+1}. ${e.n}</th>`+E.map((c,j)=>i==j?'<td class="d"></td>':e.in.includes(c.k)?`<td class="x" data-j="${j}" title="${c.n} → ${e.n}">■</td>`:`<td data-j="${j}"></td>`).join('')+'</tr>').join('');
-t.addEventListener('click',ev=>{const r=ev.target.closest('tr[data-i]');if(r)sel(+r.dataset.i)});
-function sel(i){const e=E[i],dc=D.filter(d=>d[3]==e.k),outs=E.filter(x=>x.in.includes(e.k));
- t.querySelectorAll('tr[data-i]').forEach(r=>r.classList.toggle('sel',r.dataset.i==i));
- t.querySelectorAll('td').forEach(td=>td.classList.toggle('col',td.parentNode.dataset.i==i&&e.in.some(k=>idx[k]==td.dataset.j)));
- $('ev').innerHTML=`<h3>${i+1}. ${e.n}</h3><p><b>Recibe insumos de:</b> ${e.in.length?e.in.map(k=>`<span class="tag">${E[idx[k]].n}</span>`).join(''):'<span class="tag">Base del sistema</span>'}</p><p><b>Alimenta a:</b> ${outs.length?outs.map(o=>`<span class="tag">${o.n}</span>`).join(''):'<span class="tag">Salida final hacia la gestión</span>'}</p><p><b>Evidencia:</b></p><ul>${e.ev.map(x=>`<li>${x}</li>`).join('')}</ul>${dc.length?`<p><b>Doctorado en Sostenibilidad (constancia CE-2026-249):</b></p><ul>${dc.map(d=>`<li>${d[0]} <span class="docev">· nota ${d[1]}, ${d[2]} créditos</span></li>`).join('')}</ul>`:''}`;}
-// Organigrama
-$('leg').innerHTML=E.map((e,i)=>`<b>${i+1}</b> ${e.n}`).join(' · ');
-let oh='<tr><th></th>'+E.map((e,i)=>`<th class="c" title="${e.n}">${i+1}</th>`).join('')+'<th class="c">N°</th></tr>';let last=-1;
-U.forEach((u,i)=>{if(u.g!=last){last=u.g;oh+=`<tr><th class="g" colspan="${E.length+2}">${G[u.g][0]}</th></tr>`}
- oh+=`<tr data-u="${i}"><th class="r">${u.n}</th>`+E.map(e=>`<td class="${u.core.includes(e.k)?'k':''}">${u.core.includes(e.k)?'●':''}</td>`).join('')+`<td>${u.core.length}</td></tr>`});
+
+t.innerHTML=
+'<tr><th></th>'+
+E.map((e,i)=>`<th class="c" title="${e.n}">${i+1}</th>`).join('')+
+'</tr>'+
+E.map((e,i)=>
+`<tr data-i="${i}">
+<th class="r">${i+1}. ${e.n}</th>`+
+E.map((c,j)=>
+i==j
+?'<td class="d"></td>'
+:e.in.includes(c.k)
+?`<td class="x" data-j="${j}" title="${c.n} → ${e.n}">■</td>`
+:`<td data-j="${j}"></td>`
+).join('')+
+'</tr>'
+).join('');
+
+
+t.addEventListener('click',ev=>{
+const r=ev.target.closest('tr[data-i]');
+if(r)sel(+r.dataset.i);
+});
+
+
+function sel(i){
+
+const e=E[i];
+
+const dc=D.filter(d=>d[3]==e.k);
+
+const outs=E.filter(x=>x.in.includes(e.k));
+
+t.querySelectorAll('tr[data-i]')
+.forEach(r=>
+r.classList.toggle('sel',r.dataset.i==i)
+);
+
+t.querySelectorAll('td')
+.forEach(td=>
+td.classList.toggle(
+'col',
+td.parentNode.dataset.i==i &&
+e.in.some(k=>idx[k]==td.dataset.j)
+)
+);
+
+$('ev').innerHTML=
+`<h3>${i+1}. ${e.n}</h3>
+
+<p>
+<b>Recibe insumos de:</b>
+${
+e.in.length
+?e.in.map(k=>
+`<span class="tag">${E[idx[k]].n}</span>`
+).join('')
+:'<span class="tag">Base del sistema</span>'
+}
+</p>
+
+<p>
+<b>Alimenta a:</b>
+${
+outs.length
+?outs.map(o=>
+`<span class="tag">${o.n}</span>`
+).join('')
+:'<span class="tag">Salida final hacia la gestión</span>'
+}
+</p>
+
+<p><b>Evidencia:</b></p>
+
+<ul>
+${e.ev.map(x=>`<li>${x}</li>`).join('')}
+</ul>
+
+${
+dc.length
+?`
+<p>
+<b>Doctorado en Sostenibilidad (constancia CE-2026-249):</b>
+</p>
+
+<ul>
+${dc.map(d=>
+`<li>${d[0]}
+<span class="docev">· nota ${d[1]}, ${d[2]} créditos</span>
+</li>`
+).join('')}
+</ul>
+`
+:''
+}`;
+
+}
+
+
+/* ============================================================
+   ORGANIGRAMA
+   ============================================================ */
+
+$('leg').innerHTML=
+E.map((e,i)=>
+`<b>${i+1}</b> ${e.n}`
+).join(' · ');
+
+
+let oh=
+'<tr><th></th>'+
+E.map((e,i)=>
+`<th class="c" title="${e.n}">${i+1}</th>`
+).join('')+
+'<th class="c">N°</th></tr>';
+
+let last=-1;
+
+
+U.forEach((u,i)=>{
+
+if(u.g!=last){
+
+last=u.g;
+
+oh+=
+`<tr>
+<th class="g" colspan="${E.length+2}">
+${G[u.g][0]}
+</th>
+</tr>`;
+}
+
+oh+=
+`<tr data-u="${i}">
+<th class="r">${u.n}</th>`+
+E.map(e=>
+`<td class="${u.core.includes(e.k)?'k':''}">
+${u.core.includes(e.k)?'●':''}
+</td>`
+).join('')+
+`<td>${u.core.length}</td>
+</tr>`;
+
+});
+
+
 $('org').innerHTML=oh;
-$('org').addEventListener('click',ev=>{const r=ev.target.closest('tr[data-u]');if(r){cu=+r.dataset.u;upd()}});
-function upd(){const inst=q($('inst').value.trim());
- $('org').querySelectorAll('tr[data-u]').forEach(r=>r.classList.toggle('sel',+r.dataset.u==cu));
- t.querySelectorAll('tr[data-i]').forEach(r=>{const k=E[+r.dataset.i].k,on=cu>=0&&U[cu].core.includes(k);r.classList.toggle('core',on);r.classList.toggle('dim',cu>=0&&!on)});
- document.title='Mapa de capacidades · Gustavo Godoy'+(inst?' · '+inst:'');
- $('hello').hidden=!inst;$('hello').textContent=inst?'Preparado para: '+inst:'';$('usel').value=cu>=0?cu:'';
- const pr=new URLSearchParams();if(inst)pr.set('inst',inst);if(cu>=0)pr.set('u',cu);
- $('lnk').value=location.href.split('?')[0].split('#')[0]+(pr.toString()?'?'+pr:'');
- if(cu<0){$('unit').innerHTML='<p class="sub">Selecciona una unidad del organigrama.</p>';return}
- const u=U[cu];
- $('unit').innerHTML=`<h3>${u.n}${inst?' · '+inst:''}</h3><p>${u.p}</p><p>${u.core.map(k=>`<span class="tag">${E[idx[k]].n}</span>`).join('')}</p>`+u.core.map(k=>{const e=E[idx[k]],dc=D.filter(d=>d[3]==k);return `<p><b>${e.n}</b></p><ul>${e.ev.slice(0,2).map(x=>`<li>${x}</li>`).join('')}${dc.length?`<li>Doctorado: ${dc.map(d=>d[0]+' ('+d[1]+')').join('; ')}</li>`:''}</ul>`}).join('');}
-// Doctorado
-$('doc').innerHTML='<tr><th>Asignatura</th><th>Nota</th><th>Créd.</th><th>Capacidad</th></tr>'+D.map(d=>`<tr><td>${d[0]}</td><td class="n">${d[1]}</td><td class="n">${d[2]}</td><td><button onclick="sel(${idx[d[3]]});scrollTo({top:0,behavior:'smooth'})">${E[idx[d[3]]].n}</button></td></tr>`).join('')+`<tr><td><b>Total</b></td><td></td><td class="n"><b>${D.reduce((a,d)=>a+d[2],0)}</b></td><td></td></tr>`;
-$('cro').innerHTML='<tr><th>Etapa</th><th>Fechas</th><th>Producto</th><th>Capacidad</th></tr>'+CR.map(c=>`<tr><td>${c[0]}</td><td>${c[1]}</td><td>${c[2]}</td><td><button onclick="sel(${idx[c[3]]});scrollTo({top:0,behavior:'smooth'})">${E[idx[c[3]]].n}</button></td></tr>`).join('');
-$('usel').innerHTML+=G.map((g,gi)=>`<optgroup label="${g[0]}">`+U.map((u,i)=>u.g==gi?`<option value="${i}">${u.n}</option>`:'').join('')+'</optgroup>').join('');
-function pick(v){cu=v===''?-1:+v;upd();if(cu>=0)$('unit').scrollIntoView({behavior:'smooth',block:'start'})}
-const P=new URLSearchParams(location.search);if(P.get('inst'))$('inst').value=P.get('inst');
-const pu=P.get('u');if(pu!==null&&U[+pu])cu=+pu;
-sel(3);upd();
-if(P.has('embed')){document.body.classList.add('embed');const post=()=>parent.postMessage({dsmH:document.documentElement.scrollHeight},'*');new ResizeObserver(post).observe(document.body);post();}
-</script></body></html>
+
+
+$('org').addEventListener('click',ev=>{
+
+const r=ev.target.closest('tr[data-u]');
+
+if(r){
+
+cu=+r.dataset.u;
+
+upd();
+
+}
+
+});
+
+
+/* ============================================================
+   ACTUALIZACIÓN DE SELECCIÓN
+   ============================================================ */
+
+function upd(){
+
+const inst=q($('inst').value.trim());
+
+
+$('org')
+.querySelectorAll('tr[data-u]')
+.forEach(r=>
+r.classList.toggle('sel',+r.dataset.u==cu)
+);
+
+
+t.querySelectorAll('tr[data-i]')
+.forEach(r=>{
+
+const k=E[+r.dataset.i].k;
+
+const on=
+cu>=0 &&
+U[cu].core.includes(k);
+
+r.classList.toggle('core',on);
+
+r.classList.toggle(
+'dim',
+cu>=0&&!on
+);
+
+});
+
+
+document.title=
+'Mapa de capacidades · Gustavo Godoy'+
+(inst?' · '+inst:'');
+
+
+$('hello').hidden=!inst;
+
+$('hello').textContent=
+inst?'Preparado para: '+inst:'';
+
+
+$('usel').value=
+cu>=0?cu:'';
+
+
+const pr=new URLSearchParams();
+
+if(inst)pr.set('inst',inst);
+
+if(cu>=0)pr.set('u',cu);
+
+
+$('lnk').value=
+location.href.split('?')[0].split('#')[0]+
+(pr.toString()?'?'+pr:'');
+
+
+if(cu<0){
+
+$('unit').innerHTML=
+'<p class="sub">Selecciona una unidad del organigrama.</p>';
+
+return;
+
+}
+
+
+const u=U[cu];
+
+
+$('unit').innerHTML=
+`<h3>${u.n}${inst?' · '+inst:''}</h3>
+
+<p>${u.p}</p>
+
+<p>
+${u.core.map(k=>
+`<span class="tag">${E[idx[k]].n}</span>`
+).join('')}
+</p>`
+
++
+u.core.map(k=>{
+
+const e=E[idx[k]];
+
+const dc=D.filter(d=>d[3]==k);
+
+return `
+<p><b>${e.n}</b></p>
+
+<ul>
+${e.ev.slice(0,2).map(x=>
+`<li>${x}</li>`
+).join('')}
+
+${
+dc.length
+?`<li>Doctorado: ${
+dc.map(d=>d[0]+' ('+d[1]+')').join('; ')
+}</li>`
+:''
+}
+
+</ul>`;
+
+}).join('');
+
+}
+
+
+/* ============================================================
+   TABLA DEL DOCTORADO
+   ============================================================ */
+
+$('doc').innerHTML=
+'<tr><th>Asignatura</th><th>Nota</th><th>Créd.</th><th>Capacidad</th></tr>'+
+D.map(d=>
+`<tr>
+<td>${d[0]}</td>
+<td class="n">${d[1]}</td>
+<td class="n">${d[2]}</td>
+<td>
+<button onclick="sel(${idx[d[3]]});scrollTo({top:0,behavior:'smooth'})">
+${E[idx[d[3]]].n}
+</button>
+</td>
+</tr>`
+).join('')+
+`
+<tr>
+<td><b>Total</b></td>
+<td></td>
+<td class="n">
+<b>${D.reduce((a,d)=>a+d[2],0)}</b>
+</td>
+<td></td>
+</tr>
+`;
+
+
+/* ============================================================
+   CRONOGRAMA
+   ============================================================ */
+
+$('cro').innerHTML=
+'<tr><th>Etapa</th><th>Fechas</th><th>Producto</th><th>Capacidad</th></tr>'+
+CR.map(c=>
+`<tr>
+<td>${c[0]}</td>
+<td>${c[1]}</td>
+<td>${c[2]}</td>
+<td>
+<button onclick="sel(${idx[c[3]]});scrollTo({top:0,behavior:'smooth'})">
+${E[idx[c[3]]].n}
+</button>
+</td>
+</tr>`
+).join('');
+
+
+/* ============================================================
+   SELECTOR DE UNIDADES
+   ============================================================ */
+
+$('usel').innerHTML+=
+G.map((g,gi)=>
+`<optgroup label="${g[0]}">`+
+U.map((u,i)=>
+u.g==gi
+?`<option value="${i}">${u.n}</option>`
+:''
+).join('')+
+'</optgroup>'
+).join('');
+
+
+function pick(v){
+
+cu=v===''?-1:+v;
+
+upd();
+
+if(cu>=0)
+$('unit').scrollIntoView({
+behavior:'smooth',
+block:'start'
+});
+
+}
+
+
+/* ============================================================
+   CARGA DESDE URL
+   ============================================================ */
+
+const P=new URLSearchParams(location.search);
+
+if(P.get('inst'))
+$('inst').value=P.get('inst');
+
+const pu=P.get('u');
+
+if(pu!==null&&U[+pu])
+cu=+pu;
+
+
+/* ============================================================
+   SELECCIÓN INICIAL
+   ============================================================ */
+
+sel(3);
+
+upd();
+
+
+/* ============================================================
+   MODO EMBED
+   ============================================================ */
+
+if(P.has('embed')){
+
+document.body.classList.add('embed');
+
+const post=()=>
+parent.postMessage(
+{
+dsmH:document.documentElement.scrollHeight
+},
+'*'
+);
+
+new ResizeObserver(post).observe(document.body);
+
+post();
+
+}
+
+</script>
+
+</body></html>
